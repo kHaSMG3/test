@@ -1,0 +1,17 @@
+name: Basic Test Workflow
+
+on:
+  pull_request:
+    branches: # This triggers the workflow on PRs to any branch
+      - '*'  # This triggers the workflow on PRs to any branch
+
+jobs:
+  run-basic-command:
+    runs-on: ubuntu-latest  # Specifies the runner environment
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  # Uses a pre-built action to check out the repository code
+
+    - name: Run a shell command
+      run: echo "Hello from GitHub Actions on branch HELP-8945!"  # Executes a simple shell command
